@@ -1,0 +1,5 @@
+获取string的长度的函数
+string s = "test";
+  s.length() = 4; //length()返回string长度，单位字节
+  s.size() = 4; //size()返回string长度，单位字节
+  strlen(s.c_str()) = 4; //c标准函数库，返回c风格字符串长度，单位字节。在遇到空字符'\0'时，使用strlen()获取string长度时会被截断，size()、length()可返回真实长度
