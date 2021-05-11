@@ -1,0 +1,15 @@
+unordered_map 
+  template< class Key,                                      //unordered_map::key_type
+            class T,                                        //unordered_map::mapped_type
+            class Hash = hash<Key>,                         //unordered_map::hasher
+            class Pred = equal_to<Key>,                     //unordered_map::key_equal
+            class Alloc = allocator<pair<const Key, T>>     //unordered_map::allocator_type
+            > class unordered_map;
+  给定了key，即可高效查找到所匹配的value，时间复杂度接近o(1)。可将key看做数值的下标，根据下标也可快速获取数组值。key和value的对应关系由c++内部函数(class Hash、class Pred、class Alloc)定义
+  
+  成员函数：
+  begin() : 指向unordered_map 容器的 container(1)或者its buckets(2)，std::unordered_map是无序的，因此begin()并不指向某个具体的数
+  second() : 指向 T (mapped valued)的值
+  reserve() : 开辟空间
+  [] : 访问或插入元素，如果该key不存在则执行插入；反之，覆盖掉原来的key
+  
