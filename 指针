@@ -1,0 +1,31 @@
+二级指针
+int p
+  p = 0;
+int *p
+  p = 0x2f，地址0x2f中存放了int型数据
+int **p
+  p = 0x2f，地址0x2f则存放了0x1f,地址0x1f中存放了int型数据
+  
+struct ListNode{
+  int val;
+  ListNode *next;
+  ListNode(int x) : val(x), next(NULL) {}
+};
+ListNode *p;
+  p = 0x1f,0x1f中存放了ListNode的地址
+ListNode **p;
+  p = 0x1f,0x1f中存放了0x2f,地址0x2f中存放了ListNode类型的数据
+  
+结构体变量、结构体指针变量
+struct Student{
+  string name;
+  int year;
+};
+Student s1; //结构体变量
+Student *s2; //结构体指针变量
+s2 = &s1; // &s1 : 结构体变量s1的首地址，即s1第一个项的地址; 定义结构体Student类型的指针变量s2指向&s1，则s2可以指向s1中任一成员变量
+结构体变量访问其成员的方式：
+ 1 结构体变量名.成员名 / s1.name
+ 2 结构体指针变量名->成员名 / s2->name
+ 3 (*结构体指针变量).成员名 / (*s2).name
+
